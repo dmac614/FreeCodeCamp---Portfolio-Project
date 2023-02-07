@@ -1,0 +1,231 @@
+/* RESETTING THE BOX MODEL + STYLING THE BODY */
+
+:root {
+    --all-bg: rgb(38, 43, 39);
+    --font-color: azure;
+    --section-height: 100vh;
+    --border-bottom: #000;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Convergence; 
+    width: 100%;
+    color: var(--font-color);
+    background-color: var(--all-bg);
+}
+
+
+/* 1. STYLING THE HEADER + NAVBAR */
+
+header, #navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+    background-color: var(--all-bg);
+    border-bottom: 0.05rem solid var(--border-bottom);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.logo-text {
+    padding-left: 3rem;
+    color: var(--font-color);
+    font-size: 2.5rem;
+}
+
+
+/* MAKING THE HEADER STICKY */
+
+li a, a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.nav-links li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+.navb li:hover {
+    background: url('cool-background.png');
+    background-position: 15rem;
+    height: 5rem;
+}
+
+.navb a:hover {
+    border-bottom: 0.05rem solid var(--font-color);
+    color: var(--font-color);
+}
+
+
+/* MAIN + THREE SECTIONS */
+
+/* Common Elements in these Sections */
+
+h1, h2, p {
+    text-align: center;
+}
+
+.sub-heading {
+    font-size: 3rem;
+    padding-top: 5rem;
+}
+
+#projects, #contact, #welcome-section {
+    height: var(--section-height);
+    border-bottom: 0.05rem solid var(--border-bottom);
+}
+
+.grid-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-top: 8rem;
+    padding-left: 10rem;
+}
+
+.grid-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-top: 8rem;
+    padding-left: 30rem;
+    padding-right: 15rem;
+}
+
+/* 2. STYLING THE WELCOME SECTION */
+
+#welcome-section {
+    background: url('cool-background.png');
+    background-attachment: fixed;
+    animation: bg-move 10s linear infinite;
+}
+
+/* Background image animation */
+
+@keyframes bg-move {
+    0% {
+        background-position: top 200px bottom 200px;
+    }
+    50% {
+        background-position: left 100px bottom 100px;
+    }
+    100% {
+        background-position: top 200px bottom 200px;
+    }
+}
+
+h1 {
+    font-size: 5rem;
+    padding-top: 5rem;
+}
+
+h1 + p {
+    font-size: 2rem;
+}
+
+.text {
+    font-size: 1.75rem;
+    border: 0.1rem solid var(--font-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 3rem auto;
+    text-align: center;
+    width: 50%;
+}
+
+/* 3. STYLING THE PROJECTS SECTION */
+
+.complete-project:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    margin: 7rem 0;
+}
+
+.coming-soon-logo {
+    width: 70%;
+    height: 20rem;
+    border-radius: 0.5rem;
+    background: url('cool-background.png');
+    background-attachment: fixed;
+    animation: bg-move 20s linear infinite;
+}
+
+.coming-soon-text {
+    color: var(--font-color);
+    text-align: center;
+    margin: 8rem 0;
+    font-size: 2rem;
+}
+
+.coming-soon-text:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+/* 4. STYLING THE CONTACT SECTION */
+
+.contact-links {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: url('cool-background.png');
+    background-attachment: fixed;
+    animation: bg-move 20s linear infinite;
+}
+
+.contact-links:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.contact-links-text {
+    text-align: center;
+    margin: 4rem auto;
+    font-size: 1.5rem;
+    text-shadow: 0.15rem 0.15rem black;
+}
+
+/* 5. STYLING THE FOOTER */
+
+footer {
+    padding: 2rem;
+    background: url('cool-background.png');
+    background-attachment: fixed;
+    animation: bg-move 20s linear infinite;
+    font-size: 1.25rem;
+}
+
+footer p {
+    text-align: right;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 900px) and (min-width: 600px), (max-width: 900px) {
+.grid-projects {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    height: 50%;
+    width: 90%;
+}
+}
